@@ -29,33 +29,33 @@ trained mode called ResNet into a variable called "learn".
 We start training the model on the "data" and keep on training it by estimating the correct range 
 of learning rate using the methods lr_find() and recorder.plot() with untill we see a plateau in accuracy.
 We keep saving the imtermediate models so that we dont have to from scratch again and again. 
-So we do the follwing steps once:
-*learn = cnn_learner(data, models.resnet152, metrics=[accuracy]).mixup() \
-*learn.lr_find()\
+So we do the follwing steps once:<br/>
+*learn = cnn_learner(data, models.resnet152, metrics=[accuracy]).mixup() <br/>
+*learn.lr_find()<br/>
 
 
-*learn.recorder.plot()
+*learn.recorder.plot()<br/>
 
 
-*learn.save('<mode_name>')
+*learn.save('<mode_name>')<br/>
 
 
 at this point the last group of our neural network named learn has been updated according to out "data".
 We use learn.unfreeze() to make all the weights of the neural network modifiable.
-Now we need to repeat the follwing steps till we plateau our Accuracy.
+Now we need to repeat the follwing steps till we plateau our Accuracy.<br/>
 
-------Repeating Steps------------
+------Repeating Steps------------<br/>
 
-*learn.lr_find()
-
-
-*learn.recorder.plot()
+*learn.lr_find()<br/>
 
 
-*learn.fit_one_cycle(epochs, lr)
+*learn.recorder.plot()<br/>
 
 
-*learn.save('<mode_name>')
+*learn.fit_one_cycle(epochs, lr)<br/>
+
+
+*learn.save('<mode_name>')<br/>
 
 Once i was satisfied with the model Accuracy, we Call the cnn_learner() method and 
 loading the model that we created using load() member function. 
