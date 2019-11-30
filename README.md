@@ -23,31 +23,51 @@ containig labels for test data:
 In order to run the project, simply load the data in the above mentioned structure.
 And then just run the cells in the order to performa some data cleaning and creating normalized 
 dataset.
+
 Then once the 2 palceholders "data" and "test_data" are created. We straight away load the pre-
 trained mode called ResNet into a variable called "learn".
 We start training the model on the "data" and keep on training it by estimating the correct range 
 of learning rate using the methods lr_find() and recorder.plot() with untill we see a plateau in accuracy.
 We keep saving the imtermediate models so that we dont have to from scratch again and again. 
 So we do the follwing steps once:
-*learn = cnn_learner(data, models.resnet152, metrics=[accuracy]).mixup()
-*learn.lr_find()
+*learn = cnn_learner(data, models.resnet152, metrics=[accuracy]).mixup() \
+*learn.lr_find()\
+
+
 *learn.recorder.plot()
+
+
 *learn.save('<mode_name>')
+
+
 at this point the last group of our neural network named learn has been updated according to out "data".
 We use learn.unfreeze() to make all the weights of the neural network modifiable.
-
 Now we need to repeat the follwing steps till we plateau our Accuracy.
+
 ------Repeating Steps------------
+
 *learn.lr_find()
+
+
 *learn.recorder.plot()
+
+
 *learn.fit_one_cycle(epochs, lr)
+
+
 *learn.save('<mode_name>')
 
 Once i was satisfied with the model Accuracy, we Call the cnn_learner() method and 
 loading the model that we created using load() member function. 
+
+
 -learn = cnn_learner(data, models.resnet152, metrics=[accuracy]).load('version-5-res152')
 and then finally call 
+
+
 -learn.validate(test_data.valid_dl)
+
+
 on our "test_data" to validate the accuracy.
 
 
