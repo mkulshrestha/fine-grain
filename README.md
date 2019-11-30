@@ -19,7 +19,7 @@ containig labels for test data:
 1. car_devkit
 2. cars_train
 3. cars_test
-
+# Running the project
 In order to run the project, simply load the data in the above mentioned structure.
 And then just run the cells in the order to performa some data cleaning and creating normalized 
 dataset.
