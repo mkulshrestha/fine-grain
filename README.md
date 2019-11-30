@@ -1,4 +1,4 @@
-# fine-grain
+# Fine-Grain
 This project aims to leverage the capabilities offered by a framework called fastai
 to implement transfer learning and perform fine grain classification. 
 The dataset that is being used to perform this task is the stanford cars dataset. 
@@ -55,16 +55,11 @@ Now we need to repeat the follwing steps till we plateau our Accuracy.<br/>
 *learn.save('<mode_name>')<br/>
 
 Once i was satisfied with the model Accuracy, we Call the cnn_learner() method and 
-loading the model that we created using load() member function. 
-
-
--learn = cnn_learner(data, models.resnet152, metrics=[accuracy]).load('version-5-res152')
-and then finally call 
-
-
--learn.validate(test_data.valid_dl)
-
-
+loading the model that we created using load() member function. <br/>
+<br/>
+-learn = cnn_learner(data, models.resnet152, metrics=[accuracy]).load('version-5-res152')<br/>
+and then finally call <br/>
+-learn.validate(test_data.valid_dl)<br/>
 on our "test_data" to validate the accuracy.
 
 
