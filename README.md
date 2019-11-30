@@ -30,13 +30,10 @@ We start training the model on the "data" and keep on training it by estimating 
 of learning rate using the methods lr_find() and recorder.plot() with untill we see a plateau in accuracy.
 We keep saving the imtermediate models so that we dont have to from scratch again and again. 
 So we do the follwing steps once:<br/>
+<br/>
 *learn = cnn_learner(data, models.resnet152, metrics=[accuracy]).mixup() <br/>
 *learn.lr_find()<br/>
-
-
 *learn.recorder.plot()<br/>
-
-
 *learn.save('<mode_name>')<br/>
 
 
